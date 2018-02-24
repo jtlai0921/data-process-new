@@ -2,8 +2,8 @@
   <div class="content">
 
         <div>
-            <a href=""><img src="../../assets/homeimg/chuli.png" alt=""></a>
-            <p>数据处理</p>
+            <router-link to="/DataProcess"><img src="../../assets/homeimg/chuli.png" alt=""></router-link>
+            <router-link to="/DataProcess"><p>数据处理</p></router-link>
         </div>
         <div>
             <a href=""><img src="../../assets/homeimg/yangli.png" alt=""></a>
@@ -20,6 +20,9 @@
     
 </script>
 <style>
+a {
+    text-decoration: none;
+}
 .content {
     width: 100%;
     height: 400px;
