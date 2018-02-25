@@ -1,6 +1,6 @@
 <template>
 <transition name="slide-fade">
-  <div class="bgc" :style="d_div">
+  <div class="bgc1" :style="d_div">
       <div class="d_div">
         <div class="d_head">
             <p>非结构化数据转结构化数据</p>
@@ -66,7 +66,7 @@
     }
 </script>
 <style>
-.bgc{
+.bgc1{
     width: 100%;
     height: 1100px;
     padding-top: 100px;

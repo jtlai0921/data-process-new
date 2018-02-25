@@ -19,9 +19,9 @@
 
         <div class="login">
             <ul>
-                <a href="">
+                <router-link to="/Login">
                     <li>{{login}}</li>
-                </a>
+                </router-link>
             </ul>
         </div>
     </nav>
