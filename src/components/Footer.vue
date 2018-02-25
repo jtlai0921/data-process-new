@@ -4,13 +4,13 @@
         <div class="fot_u">
             <ul>
                 <router-link to="">
-                    <li>团队介绍</li>
+                    <li>{{teamtointroduce}}</li>
                 </router-link>  
                 <router-link to="">
-                   <li>联系我们</li>
+                   <li>{{contactus}}</li>
                 </router-link>
                 <router-link to="">
-                    <li>技术支持</li>
+                    <li>{{technicalsupport}}</li>
                 </router-link>
             </ul>
         </div>
@@ -18,7 +18,15 @@
   </div>
 </template>
 <script>
-    
+    export default{
+        data(){
+            return {
+                teamtointroduce:"团队介绍",
+                contactus:"联系我们",
+                technicalsupport:"技术支持"
+            }
+        }
+    }
 </script>
 <style>
 .footer {

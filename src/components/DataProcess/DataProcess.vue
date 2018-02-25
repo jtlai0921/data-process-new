@@ -7,20 +7,20 @@
         </div>
 
         <div>
-            <textarea name="" id="txtarea" cols="90" rows="20" class="d_input" placeholder="输入或拖拽.txt文件至框内" v-model="str"></textarea>
+            <textarea name="" id="txtarea" cols="90" rows="20" class="d_input" placeholder="输入或拖拽.txt文件至框内" v-model="str1"></textarea>
             
         </div>
 
         <div class="d_btn">
-            <input type="button" value="开始分析" class="d_process">
-            <input type="button" value="清空" class="d_del">
+            <input type="button" value="开始分析" class="d_process" v-on:click="analysisi" id="analy">
+            <input type="button" value="清空" class="d_del" @click="del">
             <input type="button" value="复制" class="d_copy">
             <input type="file" id="upload" @change="upl">
             <input type="button" value="上传文件" @click="up">
         </div>
 
         <div>
-            <textarea name="" id="" cols="90" rows="20" class="d_output" placeholder="分析结果">123</textarea>
+            <textarea name="" id="anaresult" cols="90" rows="20" class="d_output" placeholder="分析结果" v-model="str2"></textarea>
         </div>
     </div>
   </div>
@@ -33,28 +33,34 @@
                 d_div:{
                     backgroundImage: "url(" + require("../../assets/dataprocess/background.jpg") + ")",
                 },
-                str:''
+                str1:'',
+                str2:''
             }
         },
         methods:{
             upl:function(){
-                    var selectedFile = document.getElementById("upload").files[0];
-                    var name = selectedFile.name;//读取选中文件的文件名
-                    var size = selectedFile.size;//读取选中文件的大小
-                    console.log("文件名:"+name+"大小："+size);
-                    var reader = new FileReader();//读取操作就是由它完成的。
-                    reader.readAsText(selectedFile,"UTF-8");//读取文件的内容
+                var selectedFile = document.getElementById("upload").files[0];
+                var name = selectedFile.name;//读取选中文件的文件名
+                var size = selectedFile.size;//读取选中文件的大小
+                console.log("文件名:"+name+"大小："+size);
+                var reader = new FileReader();//读取操作就是由它完成的。
+                reader.readAsText(selectedFile,"UTF-8");//读取文件的内容
 
                     
-                    reader.onload = function(){
-                    var txtresult=document.getElementById("txtarea"); 
-                    txtresult.str=this.result;
-                 };
+                reader.onload = function(){
+                    this.str1=this.result;
+                };
            
             },
             up:function(){
-                    var upitp=document.getElementById('upload');
-                    upitp.click();
+                var upitp=document.getElementById('upload');
+                upitp.click();
+            },
+            del:function(){
+                this.str1='';
+            },
+            analysisi:function(){
+                this.str2=this.str1;
             }
         }
     }

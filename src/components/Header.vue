@@ -20,13 +20,7 @@
         <div class="login">
             <ul>
                 <a href="">
-                    <li>登录</li>
-                </a>
-                <a href="">
-                    <li>/</li>
-                </a>
-                <a href="">
-                    <li>注册</li>
+                    <li>{{login}}</li>
                 </a>
             </ul>
         </div>
@@ -40,7 +34,8 @@ export default{
         return{
             homepage:"首页",
             myworkbench:"我的工作台",
-            historicalrecord:"历史记录"
+            historicalrecord:"历史记录",
+            login:"登录"
         }
     }
 }
